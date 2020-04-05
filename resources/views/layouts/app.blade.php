@@ -14,7 +14,7 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -72,8 +72,14 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main style="height:100vh">
             @yield('content')
+            <footer class="py-5 text-center bg-dark text-white">
+                <p>SuppBizz© 2020, HackTheCrisisDK</p>
+                <p>
+                    <a href="#">Back to top</a>
+                </p>
+            </footer>
         </main>
     </div>
 </body>

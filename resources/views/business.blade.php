@@ -1,5 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-    <business-list></business-list>
+    <business-list :businesses='@json($data)'></business-list>
 @endsection

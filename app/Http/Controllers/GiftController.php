@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Business;
 
 class GiftController extends Controller
 {
@@ -21,8 +22,10 @@ class GiftController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index($business)
     {
-        return view('giftcard');
+        $data = Business::find($business);
+
+        return view('giftcard', [ 'data' => $data ]);
     }
 }

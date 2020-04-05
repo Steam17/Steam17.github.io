@@ -15,7 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home');
-Route::get('/business/{category}', 'BusinessController@index')->name('business');
-Route::get('/payment', 'PaymentController@index')->name('payment');
-Route::get('/gift', 'GiftController@index')->name('gift');
+Route::get('/', 'LocationController@index')->name('location');
+Route::get('/payment/{business}', 'PaymentController@index')->name('payment');
+Route::get('/gift/{business}', 'GiftController@index')->name('gift');
+Route::get('/{location}', 'HomeController@index')->name('home');
+Route::get('/{location}/business/{category}', 'BusinessController@index')->name('business');

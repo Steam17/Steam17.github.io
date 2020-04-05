@@ -1,41 +1,45 @@
 <template>
-    <div class="container">
-        <p>
-          A gift card (or money ;)) will give you an opportunity to support your business crush during these tough times. And then - receive a wonderful service from your beloved local business.
-        </p>
-        <div>
-          <div class="form-group">
-            <label for="exampleFormControlSelect1">Example select</label>
-            <select class="form-control" id="exampleFormControlSelect1">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-            </select>
-          </div>
+    <div class="container py-5">
+      <div>
+        <div class="h3 text-center mb-5">
+          Choice the business you want to support.
         </div>
-        <div>
-          <div class="row">
-            <div class="col-4">
-              <div class="card" style="width: 18rem;">
-                <img src="" class="card-img-top" alt="">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a :href="`/business/${category}`" class="btn btn-primary">Go somewhere</a>
+      </div>
+      <div>
+        <div class="row">
+          <div
+            v-for="(business, index) in businesses"
+            :key="`business-${index}`"
+            class="col-4 mb-3">
+            <div class="card hover h-100">
+              <img :src="`/img/business/${business.location_id}-${business.category_id}-${index + 1}.jpg`" class="card-img-top" alt="">
+              <div class="card-body">
+                <h5 class="card-title">{{ business.name }}</h5>
+                <p class="card-text">{{ business.description }}</p>
+                <div class="card-text mb-3">
+                  <span class="text-secondary">Service:</span> {{ business.service }}
                 </div>
+                <div class="d-flex justify-space-between mb-3">
+                  <div>
+                    {{ business.price }} DKK
+                  </div>
+                </div>
+                <a :href="`/payment/${business.id}`" class="stretched-link btn btn-primary">Buy it!</a>
               </div>
             </div>
           </div>
         </div>
+      </div>
     </div>
 </template>
 
 <script>
-    export default {
-        mounted() {
-            console.log('Component mounted.')
-        }
+  export default {
+    props: {
+      businesses: {
+        type: Array,
+        default: () => []
+      }
     }
+  }
 </script>

@@ -14,13 +14,13 @@ class CategorySeeder extends Seeder
     {
         //
         $items = [
-            ['name' => 'Hairdressers', 'description' => '' ],
-            ['name' => 'Beauty salons', 'description' => '' ],
-            ['name' => 'Crafts', 'description' => '' ],
-            ['name' => 'Arts', 'description' => '' ],
-            ['name' => 'Sports groups (dancing, boxing, swimming, yoga etc.)', 'description' => '' ],
-            ['name' => 'Hobby & entertainment centers (bowlings, billiards, board games, karaoke bars, choirs, vocal teachers etc.)', 'description' => '' ],
-            ['name' => 'Coaching, nutrition, personal trainers', 'description' => '' ],
+            [ 'id' => 1,'name' => 'Hairdressers', 'description' => '' ],
+            [ 'id' => 2,'name' => 'Beauty salons', 'description' => '' ],
+            [ 'id' => 3,'name' => 'Crafts', 'description' => '' ],
+            [ 'id' => 4,'name' => 'Arts', 'description' => '' ],
+            [ 'id' => 5,'name' => 'Sports groups', 'description' => '' ],
+            [ 'id' => 6,'name' => 'Hobby & entertainment centers', 'description' => '' ],
+            [ 'id' => 7,'name' => 'Coaching, nutrition, personal trainers', 'description' => '' ],
         ];
 
         foreach ($items as $item) {

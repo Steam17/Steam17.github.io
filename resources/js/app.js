@@ -8,6 +8,13 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faSearch, faDonate, faCreditCard, faGifts } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
+library.add(faSearch, faDonate, faCreditCard, faGifts)
+Vue.component('font-awesome-icon', FontAwesomeIcon)
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -23,6 +30,7 @@ Vue.component('hero-banner', require('./components/HeroBanner.vue').default);
 Vue.component('how-works', require('./components/HowWorks.vue').default);
 Vue.component('business-list', require('./components/BusinessList.vue').default);
 Vue.component('category-list', require('./components/CategoryList.vue').default);
+Vue.component('gift-card', require('./components/GiftCard.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

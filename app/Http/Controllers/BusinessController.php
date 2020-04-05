@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Business;
 
 class BusinessController extends Controller
 {
@@ -21,8 +22,12 @@ class BusinessController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index($category)
+    public function index($location, $category)
     {
-        return view('business');
+        $data = Business::where('location_id', $location)
+            ->where('category_id', $category)
+            ->get();
+
+        return view('business', [ 'data' => $data ]);
     }
 }
